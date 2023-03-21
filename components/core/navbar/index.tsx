@@ -14,22 +14,7 @@ const ROUTES = [
     href: "/",
     title: "Changelog",
     type: "internal-link",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/customer-stories",
-    title: "Customers",
-    type: "external-link",
-  },
-  {
-    href: "https://qualify.june.so",
-    title: "Qualification",
-    type: "external-link",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
-    title: "Pricing",
-    type: "external-link",
-  },
+  }
 ] as const;
 
 interface Props {
@@ -170,7 +155,7 @@ export default function Navbar(props: Props) {
       >
         <Flex py={6} direction="row" justify="space-between">
           {/* Logo */}
-          <Link href={process.env.NEXT_PUBLIC_MARKETING_HOST} passHref prefetch={false}>
+          <Link href={process.env.NEXT_PUBLIC_MARKETING_HOST || '/'} passHref prefetch={false}>
             <Flex display={["none", "none", "block"]} cursor="pointer">
               <Image h={8} src="/June-logo.svg" alt="june-logo" />
             </Flex>
